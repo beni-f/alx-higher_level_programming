@@ -4,5 +4,3 @@ def pow(a, b):
     for i in range(b):
         prod *= a
     return prod
-
-print(pow (3, 10))
