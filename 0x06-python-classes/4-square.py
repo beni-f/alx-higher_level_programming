@@ -5,6 +5,7 @@ class Square:
     def __init__(self, size=0):
         self.__size = size
     def size(self):
+        """ returns size """
         return self.__size
     def size(self, value):
         if type(value) != int:
