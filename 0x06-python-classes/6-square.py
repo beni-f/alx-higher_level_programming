@@ -8,19 +8,40 @@ class Square:
     """ getter """
     @property
     def position(self):
+        """getter of __position
+        Returns:
+            The position of the square in 2D space
+        """
         return self.__position
-    @property
-    def size(self):
-        return self.__size
-    """ setter """
+
     @position.setter
     def position(self, value):
+        """setter of __position
+        Args:
+            value (tuple): position of the square in 2D space
+        Returns:
+            None
+        """
         if len(self.__position) != 2:
+            """ raise error """
             raise TypeError("position must be a tuple of 2 positive integers")
         else:
             self.__position = value
+    @property
+    def size(self):
+        """getter of __size
+        Returns:
+            The size of the square
+        """
+        return self.__size
     @size.setter
     def size(self, value):
+        """setter of __size
+        Args:
+            value (int): size of a side of the square
+        Returns:
+            None
+        """
         if type(value) is not int:
             """ raise error """
             raise TypeError("size must be an integer")
@@ -33,6 +54,7 @@ class Square:
     def area(self):
         """ return the area """
         return self.__size ** 2
+    """ print square """
     def my_print(self):
         if (self.__size == 0):
             print()
@@ -40,18 +62,3 @@ class Square:
             for j in range(self.__size):
                  print("".join([" " for k in range(self.__position[0])]), end="")
             print("".join(["#" for z in range(self.__size)]))
-    
-my_square_1 = Square(3)
-my_square_1.my_print()
-
-print("--")
-
-my_square_2 = Square(3, (1, 1))
-my_square_2.my_print()
-
-print("--")
-
-my_square_3 = Square(3, (3, 0))
-my_square_3.my_print()
-
-print("--")
