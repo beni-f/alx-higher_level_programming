@@ -3,23 +3,32 @@
 class Square:
     """ define function __init__ """
     def __init__(self, size=0):
-        """ initalize size to self """
         self.__size = size
+    """ getter """
+    @property
     def size(self):
-        """ returns size """
         return self.__size
+    """ setter """
+    @size.setter
     def size(self, value):
-        if type(value) != int:
-            """ raise an error"""
+        if type(value) is not int:
+            """ raise error """
             raise TypeError("size must be an integer")
         elif value < 0:
-            """ raise an error """
             raise ValueError("size must be >= 0")
         else:
-            """ set value to the private size member """
             self.__size = value
-        
     def area(self):
-        """ Return area of a Square """
         return self.__size ** 2
+my_square = Square(89)
+print("Area: {} for size: {}".format(my_square.area(), my_square.size))
+
+my_square.size = 3
+print("Area: {} for size: {}".format(my_square.area(), my_square.size))
+
+try:
+    my_square.size = "5 feet"
+    print("Area: {} for size: {}".format(my_square.area(), my_square.size))
+except Exception as e:
+    print(e)
     
