@@ -38,6 +38,7 @@ class Rectangle:
         self.__height = value
 
     def __del__(self):
+        """Delete"""
         print("Bye rectangle...")
 
     def __str__(self):
@@ -64,3 +65,4 @@ class Rectangle:
             return 0
         else:
             return 2 * (self.__width + self.__height)
+ 
