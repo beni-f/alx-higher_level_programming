@@ -37,6 +37,10 @@ class Rectangle:
             raise ValueError("height must be >= 0")
         self.__height = value
 
+    def __del__(self):
+        """Delete"""
+        print("Bye rectangle...")
+
     def __str__(self):
         """returns set of rectangle"""
         if self.__width == 0 or self.__height == 0:
@@ -61,3 +65,4 @@ class Rectangle:
             return 0
         else:
             return 2 * (self.__width + self.__height)
+        
