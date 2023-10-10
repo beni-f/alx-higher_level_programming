@@ -1,9 +1,19 @@
 #!/usr/bin/python3
-"""Raises and exception"""
+"""
+7-base_geometry module
+"""
+
+
 class BaseGeometry:
-    """raise exception with a message"""
+    """
+    Reprsent base geometry.
+    """
     def area(self):
-        raise Exception("area() is not implemented")
+        """
+        Not yet implemented.
+        """
+        raise Exception('area() is not implemented')
+
     def integer_validator(self, name, value):
         """
         Args:
@@ -17,4 +27,3 @@ class BaseGeometry:
             raise TypeError("{} must be an integer".format(name))
         if value <= 0:
             raise ValueError("{} must be greater than 0".format(name))
-        
