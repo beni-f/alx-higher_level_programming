@@ -5,7 +5,7 @@ class BaseGeometry:
     def area(self):
         raise Exception("area() is not implemented")
     def integer_validator(self, name, value):
-         """
+        """
         Args:
             name: The name of the parameter.
             value: The parameter to validate.
