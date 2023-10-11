@@ -1,5 +1,8 @@
 #!/usr/bin/python3
 
+"""
+10-student.pyS
+"""
 class Student:
     """
         A class students that defines a student by:
