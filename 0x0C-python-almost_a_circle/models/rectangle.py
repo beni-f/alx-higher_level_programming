@@ -3,6 +3,15 @@
 from base import Base
 class Rectangle(Base):
     def __init__(self, width, height, x=0, y=0, id=None):
+        """
+        init - initialization
+        Args:
+            width - width object
+            height - height object
+            x - x object
+            y - y object
+            id - id object inherited
+        """
         self.__width = width
         self.__height = height
         self.__x = x
@@ -43,4 +52,3 @@ class Rectangle(Base):
     def sety(self, value):
         """y setter"""
         self.__y = value
-    
