@@ -3,7 +3,6 @@
 base module
 """
 import json
-
 class Base:
     """
         Implementing Base
