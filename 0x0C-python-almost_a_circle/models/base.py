@@ -96,12 +96,20 @@ class Base:
         """
         load_from_file - returns a list of instances
         """
-        filename = cls.__name__ + ".json"
-        if filename is None:
-            return []
-        else:
+        filename = cls.__name__ + ".csv"
+        lst = []
+        if os.path.exists(filename):
             with open(filename, 'r') as f:
-                json_str = f.read()
-                obj_dirc = cls.from_json_string(json_str)
-                obj_list = [cls.create(**d) for d in obj_dirc]
-                return obj_list
+                reader = csv.reader(f, delimiter=',')
+                if cls.__name__ == 'Rectangle':
+                    fields = ['id', 'width', 'height', 'x', 'y']
+                elif cls.__name__ == 'Square':
+                    fields = ['id', 'size', 'x', 'y']
+                for x, row in enumerate(reader):
+                    if x > 0:
+                        i = cls(1, 1)
+                        for j, e in enumerate(row):
+                            if e:
+                                setattr(i, fields[j], int(e))
+                        lst.append(i)
+            return lst
