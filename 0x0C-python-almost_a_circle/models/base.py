@@ -112,4 +112,4 @@ class Base:
                             if e:
                                 setattr(i, fields[j], int(e))
                         lst.append(i)
-            return lst
+        return lst
