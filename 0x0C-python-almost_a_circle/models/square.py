@@ -2,8 +2,11 @@
 """
 Square module
 """
-from rectangle import Rectangle
+from models.rectangle import Rectangle
 class Square(Rectangle):
+    """
+    class for Square
+    """
     def __init__(self, size, x=0, y=0, id=None):
         """
         init - initialization
