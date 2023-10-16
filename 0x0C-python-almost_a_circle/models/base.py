@@ -22,9 +22,15 @@ class Base:
             self.id = Base.__nb_objects
 
     def to_dictionary(self):
+        """
+        returns the dictionary representation of Base
+        """
         return self.__dict__
     
     def update(self):
+        """
+        update
+        """
         pass
 
     @staticmethod
