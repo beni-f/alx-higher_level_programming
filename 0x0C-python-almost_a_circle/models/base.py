@@ -104,3 +104,54 @@ class Base:
                 obj_dirc = cls.from_json_string(json_str)
                 obj_list = [cls.create(**d) for d in obj_dirc]
                 return obj_list
+            
+    @classmethod
+    def load_from_file_csv(cls):
+        """Deserializes CSV format from a file.
+
+        Returns: list of instances
+        """
+
+        filename = cls.__name__ + ".csv"
+        lst = []
+        if os.path.exists(filename):
+            with open(filename, 'r') as f:
+                reader = csv.reader(f, delimiter=',')
+                if cls.__name__ == 'Rectangle':
+                    fields = ['id', 'width', 'height', 'x', 'y']
+                elif cls.__name__ == 'Square':
+                    fields = ['id', 'size', 'x', 'y']
+                for x, row in enumerate(reader):
+                    if x > 0:
+                        i = cls(1, 1)
+                        for j, e in enumerate(row):
+                            if e:
+                                setattr(i, fields[j], int(e))
+                        lst.append(i)
+        return lst
+
+    @classmethod
+    def draw(cls, list_rectangles, list_squares):
+        """opens a window and draws all the Rectangles and Squares.
+        Args:
+            list_rectangles:
+            list_squares:
+        """
+        window = turtle.Screen()
+        pen = turtle.Pen()
+        figures = list_rectangles + list_squares
+
+        for fig in figures:
+            pen.up()
+            pen.goto(fig.x, fig.y)
+            pen.down()
+            pen.forward(fig.width)
+            pen.right(90)
+            pen.forward(fig.height)
+            pen.right(90)
+            pen.forward(fig.width)
+            pen.right(90)
+            pen.forward(fig.height)
+            pen.right(90)
+
+        window.exitonclick()
