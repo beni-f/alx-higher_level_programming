@@ -1,7 +1,8 @@
 #!/usr/bin/python3
-# A script that lists all cities from the database hbtn_0e_4_usa
+# A script that takes in the name of a state as an argument and 
+# lists all cities of that state, using the database hbtn_0e_4_usa
 """
-    4-cities_by_state.py
+    5-filter_cities.py
 """
 
 import sys
