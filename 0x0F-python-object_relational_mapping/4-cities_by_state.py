@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 # A script that lists all cities from the database hbtn_0e_4_usa
 """
-    4-cities_by_state.py
+    4-cities_by_state
 """
 
 import sys

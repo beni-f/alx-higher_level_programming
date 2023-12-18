@@ -4,7 +4,7 @@
 #                             <mysql password> \
 #                             <database name>
 """
-    0-select_states.py
+    0-select_states
 """
 import sys
 import MySQLdb
