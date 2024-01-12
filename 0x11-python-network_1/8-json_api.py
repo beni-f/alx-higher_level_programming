@@ -10,7 +10,7 @@ if __name__ == '__main__':
     if sys.argv == 2:
         letter = sys.argv[1]
     value = {'q': letter}
-    url = requests.post('https://www.google.com')
+    url = requests.post('http://0.0.0.0:5000/search_user', data=value)
 
     try: 
         resp = url.json()
