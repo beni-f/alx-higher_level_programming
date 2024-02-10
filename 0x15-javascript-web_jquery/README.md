@@ -1,0 +1,1 @@
+This project aims to showcase the power and versatility of jQuery for front-end web development.
